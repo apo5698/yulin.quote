@@ -9,13 +9,18 @@
   <div id="quote"></div>
 </body>
 <script>
-  fetch('/yulin.quote/quotes.txt')
-    .then(res => res.text())
-    .then(text => {
-      const quotes = text.split('\n');
-      const quoteOfToday = quotes[Math.floor(Math.random() * quotes.length)];
-      document.getElementById('quote').innerHTML = quoteOfToday;
-    });
+  const update = () => {
+    fetch('/yulin.quote/quotes.txt')
+      .then(res => res.text())
+      .then(text => {
+        const quotes = text.split('\n');
+        const quoteOfToday = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById('quote').innerHTML = quoteOfToday;
+      });
+  }
+
+  update();
+  document.addEventListener('click', update);
 </script>
 
 </html>
