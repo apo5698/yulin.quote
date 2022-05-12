@@ -1,4 +1,9 @@
-<div id="quote"></div>
+<!DOCTYPE html>
+<html>
+
+<body>
+  <div id="quote"></div>
+</body>
 <script>
   const quotesFile = '/yulin.quote/quotes.txt';
   fetch(quotesFile)
@@ -8,3 +13,5 @@
       document.getElementById('quote').innerHTML = text;
     })
 </script>
+
+</html>
