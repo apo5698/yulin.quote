@@ -5,12 +5,12 @@
   <div id="quote"></div>
 </body>
 <script>
-  const quotesFile = '/yulin.quote/quotes.txt';
-  fetch(quotesFile)
+  fetch('/yulin.quote/quotes.txt')
     .then(res => res.text())
     .then(text => {
-      // let quotes = text.split('\n');
-      document.getElementById('quote').innerHTML = text;
+      const quotes = text.split('\n');
+      const quoteOfToday = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById('quote').innerHTML = quoteOfToday;
     })
 </script>
 
