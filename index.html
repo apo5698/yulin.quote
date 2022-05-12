@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+  <style>
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+
 <body>
-  <div id="quote"></div>
+  <h1 class="center" id="quote"></h1>
 </body>
 <script>
   fetch('/yulin.quote/quotes.txt')
@@ -11,7 +22,7 @@
       const quotes = text.split('\n');
       const quoteOfToday = quotes[Math.floor(Math.random() * quotes.length)];
       document.getElementById('quote').innerHTML = quoteOfToday;
-    })
+    });
 </script>
 
 </html>
